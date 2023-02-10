@@ -1,23 +1,32 @@
-﻿namespace Marketplace.Domain
+﻿namespace Marketplace.Domain;
+
+public class ClassifiedAd
 {
-    public class ClassifiedAd
+    private UserId _ownerId;
+    private decimal _price;
+    private string _text;
+    private string _title;
+
+    public ClassifiedAd(ClassifiedAdId id, UserId ownerId)
     {
-        public ClassifiedAdId Id { get; private set; }
+        Id = id;
+        _ownerId = ownerId;
+    }
 
-        public ClassifiedAd(ClassifiedAdId id, UserId ownerId) 
-        {
-            Id = id;
-            _ownerId= ownerId;
-        }
+    public ClassifiedAdId Id { get; }
 
-        public void SetTitle(string title) => _title = title;
-        public void UpdateTest(string text) => _text = text;
-        public void UpdatePrice(decimal price) => _price = price;
+    public void SetTitle(string title)
+    {
+        _title = title;
+    }
 
-        private UserId _ownerId;
-        private string _title;
-        private string _text;
-        private decimal _price;
+    public void UpdateTest(string text)
+    {
+        _text = text;
+    }
 
+    public void UpdatePrice(decimal price)
+    {
+        _price = price;
     }
 }

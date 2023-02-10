@@ -1,7 +1,5 @@
-﻿namespace Marketplace.Core
-{
-    public class Class1
-    {
+﻿namespace Marketplace.Core;
 
-    }
+public class Class1
+{
 }
